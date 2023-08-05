@@ -5,9 +5,9 @@ class Solution(object):
         :type n: int
         :rtype: List[int]
         """
-        ans = []
+        res = []
         for i in range(n):
-            ans.append(nums[i])
-            ans.append(nums[i+n])
-        return ans
+            res.append(nums[i])
+            res.append(nums[i+n])
+        return res
     
