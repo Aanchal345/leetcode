@@ -5,6 +5,7 @@ class SubrectangleQueries(object):
         :type rectangle: List[List[int]]
         """
         self.rectangle = rectangle
+        self.ops = []
         
 
     def updateSubrectangle(self, row1, col1, row2, col2, newValue):
@@ -16,10 +17,7 @@ class SubrectangleQueries(object):
         :type newValue: int
         :rtype: None
         """
-        h,w = (row2-row1),(col2-col1)
-        for r in range(row1,row1+h+1):
-             for c in range(col1,col1+w+1):
-                    self.rectangle[r][c] = newValue
+        self.ops.append((row1,col1,row2,col2,newValue))
       
     def getValue(self, row, col):
         """
@@ -27,6 +25,9 @@ class SubrectangleQueries(object):
         :type col: int
         :rtype: int
         """
+        for row1,col1,row2,col2,val in reversed(self.ops):
+            if row >= row1 and col >= col1 and row <= row2 and col <= col2:
+                return val
         return self.rectangle[row][col]
       
         
