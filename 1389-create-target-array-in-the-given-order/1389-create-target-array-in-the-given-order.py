@@ -5,8 +5,8 @@ class Solution(object):
         :type index: List[int]
         :rtype: List[int]
         """
-        target = []
-        for i in range(len(index)):
-            target.insert(index[i],nums[i])
-        return target
+        a=[]
+        for i in range(len(nums)):
+            a.insert(index[i],nums[i])
+        return a
         
