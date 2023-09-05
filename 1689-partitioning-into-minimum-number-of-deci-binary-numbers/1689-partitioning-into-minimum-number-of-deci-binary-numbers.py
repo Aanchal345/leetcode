@@ -4,5 +4,5 @@ class Solution(object):
         :type n: str
         :rtype: int
         """
-        return max(map(int,list(n)))
+        return int(max(list(str(n))))
         
