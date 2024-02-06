@@ -5,6 +5,11 @@ class Solution(object):
         :type stones: str
         :rtype: int
         """
-        st=Counter(stones)
-        return sum([st[j]for j in jewels if j in st])
+        count = 0
+        for stone in stones:
+            for jewel in jewels:
+                if stone == jewel:
+                    count += 1
+                    break
+        return count
         
