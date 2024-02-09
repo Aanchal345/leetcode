@@ -6,6 +6,7 @@ class Solution(object):
         :rtype: bool
         """
         for x in 'abcdefghijklmnopqrstuvwxyz':
-            if s.count(x) != t.count(x):
+            if s.count(x)!= t.count(x):
                 return False
         return True
+        
